@@ -77,3 +77,51 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+
+Step:1 Create new project using command - “npx react-native init ProjectName —version X.XX.X (0.73.0)”
+
+Step:2 Requirements packages - "@react-native-async-storage/async-storage",
+"@react-navigation/bottom-tabs","@react-navigation/native","@reduxjs/toolkit",
+"@react-navigation/stack", "axios", "react-native-config","react-redux"
+"react-native-gesture-handler", "react-native-safe-area-context",
+"react-native-screens",
+ Step:3 Create src folder and within src create basic folders structure for project->
+       - src
+          - assets
+             - fonts
+             - images           
+          - components              
+             - Headers.js              
+             - Button.js
+          - navigation              
+             - BottomTab.js              
+             - App Navigator              
+             - Stacks(Home, Profile, Products)
+          - screens
+             - Home, Login, ProductList           
+          - services
+             - api.js              
+             - urls.js
+          - redux
+             - actions
+                 - authAction.js
+             - constants
+                 - authType.js
+             - reducers
+                 - authSlice.js
+             - store
+                 - index.js           
+                 - utils
+             - StaticTxt.js
+             - Stylesheet.create.style.js
+
+Step:4 Create the login and home pages with style,
+Step:5 Create the redux folder and create sub folders actions, constants, reducers, and store folder,
+Step:6 Now, First create index file in store folder,
+Step:7 After store file, create authType file in constants folder,
+Step:8 After constants file, create authAction(tells to reducers -what do will reducer) file and create actions for login & logout,
+Step:9 After authAction, create the authSlice/authReducer file to manipulate the data. it receives an action. In authReducer file, call a function the name of setToken which is create in action file - this function is used for save the token into async storage using async package.
+Step:10 Now, Action file will call on to login screen using dispatch method.
+
