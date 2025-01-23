@@ -1,4 +1,5 @@
 export const LOGO = require('../images/logo.png');
+export const CODELOG = require('../images/codelog.png');
 export const HOME = require('../images/home.png');
 export const ACTIVE_HOME = require('../images/active-home.png');
 export const PRODUCT = require('../images/product.png');

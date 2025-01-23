@@ -1,6 +1,7 @@
 import axios from 'axios';
+import Config from 'react-native-config';
 
-const API_URL = 'https://dummyjson.com/';
+const API_URL = Config;
 
 const DEFAULT_HEADERS = {
   Accept: 'application/json',

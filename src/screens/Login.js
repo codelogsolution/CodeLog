@@ -20,6 +20,7 @@ const Login = () => {
     password: 'emilyspass',
   });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (key, text) => {
     setCredentials({...credentials, [key]: text});
@@ -27,6 +28,14 @@ const Login = () => {
 
   const login_response = useSelector(state => state?.auth);
   console.log('login_response', login_response);
+
+  const handleValidation = () => {
+    if (credentials?.username === '' && credentials?.password === '') {
+      setError('Please fill the credentials');
+    } else {
+      handleLogin();
+    }
+  };
 
   const handleLogin = async () => {
     setLoading(true);
@@ -59,8 +68,9 @@ const Login = () => {
             borderColor: 'gray',
             paddingHorizontal: 10,
             borderRadius: 5,
-            marginBottom: 20,
+            marginBottom: 22,
           }}
+          id="username"
           value={credentials.username}
           onChangeText={text => handleChange('username', text)}
           placeholder="Username"
@@ -72,15 +82,17 @@ const Login = () => {
             borderColor: 'gray',
             paddingHorizontal: 10,
             borderRadius: 5,
-            marginBottom: 40,
+            marginBottom: 15,
           }}
+          id="password"
           value={credentials?.password}
           onChangeText={text => handleChange('password', text)}
           placeholder="Password"
           secureTextEntry={true}
         />
+        {error && <Text style={{color: 'red', marginBottom: 35}}>{error}</Text>}
         <TouchableOpacity
-          onPress={handleLogin}
+          onPress={handleValidation}
           style={{
             backgroundColor: 'red',
             height: 45,

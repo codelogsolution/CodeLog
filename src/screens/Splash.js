@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
-import {View, Image} from 'react-native';
-import {LOGO} from '../assets/images/images';
+import {View, Image, Dimensions} from 'react-native';
+import {CODELOG, LOGO} from '../assets/images/images';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SCREENS } from './MyEvent';
 
 const SplashScreen = ({navigation}) => {
-
   useEffect(() => {
     setTimeout(() => {
       retrieveData();
-    }, 1000);
+    }, 1200);
   }, []);
 
   const retrieveData = async () => {
@@ -18,7 +18,7 @@ const SplashScreen = ({navigation}) => {
       if (tokenValue) {
         navigation.replace('BottomTab');
       } else {
-        navigation.replace('Login');
+        navigation.replace('MyEvent');
       }
     } catch (error) {
       console.log(error);
@@ -33,7 +33,14 @@ const SplashScreen = ({navigation}) => {
         alignItems: 'center',
         backgroundColor: 'white',
       }}>
-      <Image source={LOGO} style={{width: 100, height: 100}} />
+      <Image
+        source={CODELOG}
+        style={{
+          resizeMode:'contain',
+          width: Dimensions.get('screen').width * 0.42,
+          height: Dimensions.get('screen').height * 0.42,
+        }}
+      />
     </View>
   );
 };
