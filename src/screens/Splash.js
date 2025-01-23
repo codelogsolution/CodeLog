@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {View, Image, Dimensions} from 'react-native';
 import {CODELOG, LOGO} from '../assets/images/images';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { SCREENS } from './MyEvent';
 
 const SplashScreen = ({navigation}) => {
   useEffect(() => {
@@ -18,7 +17,7 @@ const SplashScreen = ({navigation}) => {
       if (tokenValue) {
         navigation.replace('BottomTab');
       } else {
-        navigation.replace('MyEvent');
+        navigation.replace('Login');
       }
     } catch (error) {
       console.log(error);

@@ -3,7 +3,7 @@ import Splash from '../screens/Splash';
 import BottomTab from './BottomTab';
 import {View} from 'react-native';
 import Login from '../screens/Login';
-import MyEventContainer from '../screens/MyEvent/MyEvent.container';
+import MyDashboardContainer from '../screens/MyDashboard/MyDashboard.container';
 
 const Stack = createStackNavigator();
 
@@ -18,7 +18,7 @@ const AppNavigator = () => {
     //   <Stack.Screen name="BottomTab" component={BottomTab} /> */}
     // </Stack.Navigator>
     <View style={{padding: 20}}>
-      <MyEventContainer />
+      <MyDashboardContainer />
     </View>
   );
 };
