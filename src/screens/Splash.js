@@ -8,13 +8,12 @@ const SplashScreen = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
       retrieveData();
-    }, 1000);
+    }, 1500);
   }, []);
 
   const retrieveData = async () => {
     try {
       const tokenValue = await AsyncStorage.getItem('@token_store');
-      console.log('tokenValue::::::', tokenValue);
       if (tokenValue) {
         navigation.replace('BottomTab');
       } else {

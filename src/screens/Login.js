@@ -6,6 +6,7 @@ import {
   Button,
   TouchableOpacity,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {STATIC_TXT} from '../utils/Constants';
@@ -26,14 +27,14 @@ const Login = () => {
   };
 
   const login_response = useSelector(state => state?.auth);
-  console.log('login_response', login_response);
+  console.log('login_response', login_response?.token);
 
   const handleLogin = async () => {
     setLoading(true);
     try {
       await dispatch(loginAction(credentials));
-      navigation.replace('BottomTab');
       setLoading(false);
+      navigation.replace('BottomTab');
     } catch (error) {
       console.error(error);
       setLoading(false);
