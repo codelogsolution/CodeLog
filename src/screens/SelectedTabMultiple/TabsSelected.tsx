@@ -6,6 +6,7 @@ import {
   FlatList,
   StyleSheet,
   ScrollView,
+  NativeModules,
 } from 'react-native';
 
 const TabComponent = () => {
@@ -66,28 +67,13 @@ const TabComponent = () => {
       type: 'raised',
     },
     {
-      event_name: 'Mindful Minutes items',
-      date: '20 Dec 2024',
-      type: 'raised',
-    },
-    {
       event_name: 'Sonlang salon items',
       date: '02 Jan 2025',
-      type: 'raised',
+      type: 'pts.',
     },
   ]);
 
   const [futureItemList, setFutureItemList] = useState([
-    {
-      event_name: 'Go Live items',
-      date: '22 Oct 2024',
-      type: 'raised',
-    },
-    {
-      event_name: 'Dev Events items',
-      date: '18 Aug 2024',
-      type: 'raised',
-    },
     {
       event_name: 'Popines Left items',
       date: '10 Jan 2025',
@@ -159,8 +145,13 @@ const TabComponent = () => {
     );
   };
 
+  const eventPress = () =>{
+     const languageFind = NativeModules.SettingsManager.settings.AppleLanguages[0];
+     console.log('languageFind', languageFind);
+  }
+
   const renderItem = ({item}: any) => (
-    <View style={styles.card}>
+    <TouchableOpacity onPress={eventPress} style={styles.card}>
       <Text style={{fontSize: 22, marginBottom: 5}}>{item?.event_name}</Text>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Text style={{fontSize: 15, color: '#b3b3b3'}}>{item?.date}</Text>
@@ -176,7 +167,7 @@ const TabComponent = () => {
         />
         <Text style={{fontSize: 15, color: '#b3b3b3'}}>{item?.type}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 
   return (

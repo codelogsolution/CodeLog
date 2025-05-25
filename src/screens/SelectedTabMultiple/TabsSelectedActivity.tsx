@@ -74,60 +74,6 @@ const TabComponent = () => {
     },
   ];
 
-  const liveItemList = [
-    {
-      event_name: 'Mindful Minutes items',
-      date: '26 Jan 2025',
-      type: 'raised',
-    },
-    {
-      event_name: 'Mindful Minutes items',
-      date: '20 Dec 2024',
-      type: 'raised',
-    },
-    {
-      event_name: 'Sonlang salon items',
-      date: '02 Jan 2025',
-      type: 'raised',
-    },
-  ];
-
-  const futureItemList = [
-    {
-      event_name: 'Go Live items',
-      date: '22 Oct 2024',
-      type: 'raised',
-    },
-    {
-      event_name: 'Dev Events items',
-      date: '18 Aug 2024',
-      type: 'raised',
-    },
-    {
-      event_name: 'Popines Left items',
-      date: '10 Jan 2025',
-      type: 'raised',
-    },
-  ];
-
-  const pastItemList = [
-    {
-      event_name: 'Julia Finder items',
-      date: '31 Dec 2024',
-      type: 'raised',
-    },
-    {
-      event_name: 'Slish Left items',
-      date: '10 Jan 2025',
-      type: 'raised',
-    },
-    {
-      event_name: 'Jenifier stock items',
-      date: '31 Dec 2024',
-      type: 'raised',
-    },
-  ];
-
   const toggleTab = (tabId: string) => {
     setSelectedTabs(prevSelected => {
       if (prevSelected.includes(tabId)) {
